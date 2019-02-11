@@ -1,10 +1,17 @@
-import React from 'react'
-import { Flex, Box, Text } from 'rebass'
+import React from 'react';
+import { Flex, Box, Text } from 'rebass';
+import PageContainer from './PageContainer';
 import { NavLink } from 'react-router-dom';
 
 export default props => (
-  <Flex flexDirection="column" alignItems="center">
-    <NavLink to="/faucet" activeClassName="is-active" exact={true} >Faucet </NavLink>
-    <NavLink to="/createcommunity" activeClassName="is-active" exact={true} >Create Community </NavLink>
-  </Flex>
+  <PageContainer>
+    <Flex flexDirection="row" textAlign="center" justifyContent="center">
+      <Box width={1/2} style={{ textAlign:"center"}}>
+        <NavLink to="/faucet" activeClassName="is-active" exact={true} >Faucet </NavLink>
+      </Box>
+      <Box width={1/2} style={{ textAlign:"center"}}>
+        <NavLink to="/createcommunity" activeClassName="is-active" exact={true} >Create Community </NavLink>
+      </Box>
+    </Flex>
+  </PageContainer>
 )

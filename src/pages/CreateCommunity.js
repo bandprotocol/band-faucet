@@ -8,7 +8,6 @@ export default props => (
         Create community!
       </Text>
     </Box>
-
     <Box>
       <Text fontSize={16}>No block is found here</Text>
     </Box>
