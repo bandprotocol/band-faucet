@@ -4,12 +4,7 @@ import PageContainer from './components/PageContainer'
 import { ThemeProvider } from 'styled-components'
 import theme from 'ui/theme'
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from 'components/Navbar'
 import CreateCommunityPage from 'pages/CreateCommunity'
