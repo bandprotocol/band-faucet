@@ -8,6 +8,7 @@ export default ({
   handleRemoveKey,
   handleField,
   handleKeyValue,
+  handleCreateComm,
   state,
 }) => (
   <Flex flexDirection="column" alignItems="center" justifyContent="flex-start">
@@ -48,7 +49,9 @@ export default ({
       />
     </Flex>
     <Box pt={20}>
-      <Button>Create Community</Button>
+      <Button variant="primary" onClick={handleCreateComm}>
+        Create Community
+      </Button>
     </Box>
   </Flex>
 )

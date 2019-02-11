@@ -16,10 +16,10 @@ const Button = styled.button`
 
 export default ({ keyName, value, handleKV, removeKey }) => (
   <Flex flexDirection="row" textAlign="center" justifyContent="center">
-    <Box flex={3} pt={1}>
+    <Box flex={10} pt={1}>
       {keyName}
     </Box>
-    <Box flex={5} style={{ textAlign: 'center' }}>
+    <Box flex={4} style={{ textAlign: 'center' }}>
       <TextInput
         type="text"
         value={value}
