@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axois": "^1.0.0",
+    "axios": "^0.18.0",
     "band.js": "^1.0.17",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

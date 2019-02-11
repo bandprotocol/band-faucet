@@ -1,17 +1,17 @@
 import React from 'react'
-import { Flex, Box, Text, Button } from 'rebass'
+import { Flex, Box, Text, Button, Link } from 'rebass'
 import styled from 'styled-components'
 import PageContainer from 'components/PageContainer'
 
 const TextInput = styled.input`
-  width: 100%;
+  width: 480px
   padding: 12px 20px;
   border: 1px solid #000000;
   font-size: 16px;
   border-radius: 4px;
 `
 
-export default ({ address, onChange, onClick }) => (
+export default ({ address, result, error, onChange, onClick }) => (
   <PageContainer>
     <Flex flexDirection="column" alignItems="center">
       <Box my={4}>
@@ -29,7 +29,7 @@ export default ({ address, onChange, onClick }) => (
           onChange={onChange}
         />
         <Button
-          variant="outline"
+          variant="primary"
           mx="20px"
           px="20px"
           py="10px"
@@ -39,6 +39,19 @@ export default ({ address, onChange, onClick }) => (
           Give me Band!!!
         </Button>
       </Flex>
+      <Text py={2} color="red" textAlign="center">
+        {error}
+      </Text>
+      <Box py={4}>
+        {result.map((e, i) => (
+          <Flex flexDirection="row" key={i} py={2}>
+            <Text fontSize={2}>{e.message}</Text>
+            <Link href={e.link} target="_blank" px={2}>
+              <i class="fas fa-external-link-alt" />
+            </Link>
+          </Flex>
+        ))}
+      </Box>
     </Flex>
   </PageContainer>
 )

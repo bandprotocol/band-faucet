@@ -165,6 +165,15 @@ body {
   background: #fafbff;
 }
 
+a,
+a:hover,
+a:active {
+  color: #7a35d4;
+}
+a:not(:hover) {
+  text-decoration: none;
+}
+
 *:focus {
   outline: none;
 }
