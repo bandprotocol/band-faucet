@@ -12,13 +12,18 @@ export default class CreateCommunity extends Component {
       description: '',
       website: '',
       author: '',
-      priceEquation: 'x^2 + 10',
-      voting: '0x6cb37a5Bf9147d1d2789014BFe37ca41a61F3d4e',
-      collateralEquation: '8*x^2',
+      priceEquation:
+        'x * ((2* x / 2000000000000000000000000000000000000) ^ 2) * curve / 1000000000000',
+      voting: '0x8fAcfD1352EBc1F8Bb49d6C557609Ac35177d046',
+      collateralEquation: '(x^2 / 2000000000000000000000000000000000000) ^ 2',
       kvs: {
         'params:expiration_time': '60',
         'params:min_participation_pct': '6',
         'params:support_required_pct': '5',
+        'core:admin_contract':
+          '873375337124523905233580799053805408053028940486',
+        'core:reward_period': '120',
+        'core:reward_edit_period': '120',
       },
     }
 
@@ -63,11 +68,7 @@ export default class CreateCommunity extends Component {
     const values = []
     for (var k in this.state.kvs) {
       keys.push(k)
-      if (isNaN(this.state.kvs[k])) {
-        values.push(this.state.kvs[k])
-      } else {
-        values.push(parseInt(this.state.kvs[k]))
-      }
+      values.push(this.state.kvs[k])
     }
 
     await bandClient.deployCommunity(
