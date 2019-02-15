@@ -20,6 +20,7 @@ export default class App extends Component {
             <div>
               <Navbar />
               <Switch>
+                <Route exact path="/" component={FaucetPage} />
                 <Route exact path="/faucet" component={FaucetPage} />
                 <Route
                   exact

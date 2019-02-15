@@ -27,7 +27,9 @@ export default ({ keyName, value, handleKV, removeKey }) => (
       />
     </Box>
     <Box flex={1} style={{ textAlign: 'right' }}>
-      <Button onClick={() => removeKey(keyName)}>X</Button>
+      <Button onClick={() => removeKey(keyName)}>
+        <i class="fas fa-times" />
+      </Button>
     </Box>
   </Flex>
 )
