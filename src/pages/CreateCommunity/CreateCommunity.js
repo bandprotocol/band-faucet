@@ -14,14 +14,14 @@ export default class CreateCommunity extends Component {
       author: '',
       priceEquation:
         'x * ((2* x / 2000000000000000000000000000000000000) ^ 2) * curve / 1000000000000',
-      voting: '0x8fAcfD1352EBc1F8Bb49d6C557609Ac35177d046',
+      voting: '0xE6F332Eb89c6c583eA659a3cB0ca751838158915',
       collateralEquation: '(x^2 / 2000000000000000000000000000000000000) ^ 2',
       kvs: {
         'params:expiration_time': '60',
         'params:min_participation_pct': '6',
         'params:support_required_pct': '5',
         'core:admin_contract':
-          '873375337124523905233580799053805408053028940486',
+          '742909940007229200196162437992526824367023749414',
         'core:reward_period': '120',
         'core:reward_edit_period': '120',
       },
@@ -61,6 +61,7 @@ export default class CreateCommunity extends Component {
   }
 
   async handleCreateComm() {
+    BandProtocolClient.setAPI('https://stable-api-band.herokuapp.com')
     const bandClient = await BandProtocolClient.make({
       provider: window.web3.currentProvider,
     })

@@ -17,7 +17,7 @@ export default class Faucet extends React.Component {
   async onClick() {
     try {
       const { data } = await axios.post(
-        'https://api.bandprotocol.com/band/request',
+        'https://stable-api-band.herokuapp.com/band/request',
         {
           to: this.state.address,
           value: '1000000000000000000000',
