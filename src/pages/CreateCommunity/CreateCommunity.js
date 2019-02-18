@@ -12,9 +12,8 @@ export default class CreateCommunity extends Component {
       description: '',
       website: '',
       author: '',
-      priceEquation:
-        'x * ((2* x / 2000000000000000000000000000000000000) ^ 2) * curve / 1000000000000',
-      voting: '0xE6F332Eb89c6c583eA659a3cB0ca751838158915',
+      priceEquation: 'x * ((2* x / 2000000000000000000000000000000000000) ^ 2)',
+      voting: process.env.REACT_APP_VOTING_DEFAULT,
       collateralEquation: '(x^2 / 2000000000000000000000000000000000000) ^ 2',
       kvs: {
         'params:expiration_time': '60',
@@ -61,7 +60,7 @@ export default class CreateCommunity extends Component {
   }
 
   async handleCreateComm() {
-    BandProtocolClient.setAPI('https://stable-api-band.herokuapp.com')
+    BandProtocolClient.setAPI(process.env.REACT_APP_API_PATH)
     const bandClient = await BandProtocolClient.make({
       provider: window.web3.currentProvider,
     })
