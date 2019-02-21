@@ -17,12 +17,19 @@ export default class CreateCommunity extends Component {
       collateralEquation: '(x^2 / 2000000000000000000000000000000000000) ^ 2',
       kvs: {
         'params:expiration_time': '60',
-        'params:min_participation_pct': '6',
-        'params:support_required_pct': '5',
+        'params:min_participation_pct': '6000000000000',
+        'params:support_required_pct': '5000000000000',
         'core:admin_contract':
           '742909940007229200196162437992526824367023749414',
-        'core:reward_period': '120',
-        'core:reward_edit_period': '120',
+        'core:reward_period': '240',
+        'core:reward_edit_period': '240',
+        'tcr:dispensation_percentage': '30000000000000',
+        'tcr:min_deposit': '100000000000000000000',
+        'tcr:apply_stage_length': '240',
+        'tcr:commit_time': '240',
+        'tcr:reveal_time': '240',
+        'tcr:support_required_pct': '50000000000000',
+        'tcr:min_participation_pct': '10000000000000',
       },
     }
 
