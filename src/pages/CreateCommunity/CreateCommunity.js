@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CreateCommunityRender from './CreateCommunityRender'
-import BandProtocolClient from 'band.js'
+import { BandProtocolClient } from 'band.js'
 
 export default class CreateCommunity extends Component {
   constructor(props) {
@@ -12,7 +12,6 @@ export default class CreateCommunity extends Component {
       description: '',
       website: '',
       author: '',
-      priceEquation: 'x * ((2* x / 2000000000000000000000000000000000000) ^ 2)',
       voting: process.env.REACT_APP_VOTING_DEFAULT,
       collateralEquation: '(x^2 / 2000000000000000000000000000000000000) ^ 2',
       kvs: {
@@ -85,7 +84,6 @@ export default class CreateCommunity extends Component {
       this.state.description,
       this.state.website,
       this.state.author,
-      this.state.priceEquation,
       this.state.voting,
       keys,
       values,

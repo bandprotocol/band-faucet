@@ -30,11 +30,6 @@ export default ({
         handleChange={handleField}
       />
       <Form fieldName="author" val={state.author} handleChange={handleField} />
-      <Form
-        fieldName="priceEquation"
-        val={state.priceEquation}
-        handleChange={handleField}
-      />
       <Form fieldName="voting" val={state.voting} handleChange={handleField} />
       <Form
         fieldName="collateralEquation"
