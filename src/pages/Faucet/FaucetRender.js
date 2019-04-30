@@ -27,7 +27,6 @@ const CardBg = styled(Flex)`
 `
 
 const TextHeader = styled(Flex)`
-  width: 171px;
   height: 33px;
   font-family: Avenir-Heavy;
   font-size: 24px;
@@ -87,7 +86,7 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
       pb="100px"
     >
       <TextHeader mt="40px" mb="80px">
-        Band faucet
+        Band  Rinkeby Faucet
       </TextHeader>
       <Flex flexDirection="row" width={1}>
         <Flex flex={1} justifyContent="center" alignItems="center">
@@ -197,10 +196,7 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
               lineHeight={1.67}
               style={{ fontStyle: 'oblique' }}
             >
-              * By requesting Band Protocol faucet, you agree to waive your …
-              Pork loin ground round shankle spare ribs bacon. Pig pastrami
-              swine fatback, chicken tenderloin boudin shankle porchetta
-              pancetta strip steak landjaeger. Capicola pork tenderloin turkey
+              * By requesting testnet BAND token, you agree to forfeit your once-in-a-lifetime chance to convert testnet BAND and CHT to mainnet.
             </Text>
           </Flex>
         </Flex>
