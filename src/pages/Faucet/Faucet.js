@@ -41,7 +41,12 @@ export default class Faucet extends React.Component {
             loading: false,
           })
         } catch (e) {
-          this.setState({ error: e.response.data.message.to, loading: false })
+          this.setState({
+            result: null,
+            address: '',
+            error: e.response.data.message.to,
+            loading: false,
+          })
         }
       },
     )
