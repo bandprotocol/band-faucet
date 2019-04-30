@@ -176,7 +176,10 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
             />
           </Flex>
           <Flex mb="30px">
-            <StyledButton disable={disable} onClick={!disable && onClick}>
+            <StyledButton
+              disable={disable}
+              onClick={() => !disable && onClick()}
+            >
               <Flex flexDirection="row">
                 <Flex mr="20px">Send me 100 Test BAND</Flex>
                 <Flex>➔</Flex>
