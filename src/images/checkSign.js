@@ -7,7 +7,7 @@ export default ({ width, height }) => (
     height={height}
     viewBox="0 0 15 15"
   >
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <circle cx="7.5" cy="7.5" r="7.5" fill="#42C47F" />
       <path
         stroke="#FFF"

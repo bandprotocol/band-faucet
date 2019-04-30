@@ -9,24 +9,24 @@ export default ({ width, height }) => (
   >
     <defs>
       <linearGradient id="a" x1="67.273%" x2="38.75%" y1="84.999%" y2="23.114%">
-        <stop offset="0%" stop-color="#4D77FF" />
-        <stop offset="100%" stop-color="#4539FF" />
+        <stop offset="0%" stopColor="#4D77FF" />
+        <stop offset="100%" stopColor="#4539FF" />
       </linearGradient>
       <linearGradient id="b" x1="11.765%" x2="87.369%" y1="0%" y2="97.898%">
-        <stop offset="0%" stop-color="#4D77FF" />
-        <stop offset="100%" stop-color="#4539FF" />
+        <stop offset="0%" stopColor="#4D77FF" />
+        <stop offset="100%" stopColor="#4539FF" />
       </linearGradient>
       <linearGradient id="c" x1="11.336%" x2="87.788%" y1="0%" y2="97.898%">
-        <stop offset="0%" stop-color="#4D77FF" />
-        <stop offset="100%" stop-color="#4539FF" />
+        <stop offset="0%" stopColor="#4D77FF" />
+        <stop offset="100%" stopColor="#4539FF" />
       </linearGradient>
     </defs>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <text
         fill="#FFF"
-        font-family="Avenir-Heavy, Avenir"
-        font-size="16"
-        font-weight="600"
+        fontFamily="Avenir-Heavy, Avenir"
+        fontSize="16"
+        fontWeight="600"
       >
         <tspan x="40" y="22">
           CoinHatcher

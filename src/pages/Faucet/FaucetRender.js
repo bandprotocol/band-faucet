@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import SupplyChainImg from '../../images/supplyChain'
 import CheckSign from '../../images/checkSign'
 import ErrorSign from '../../images/errorSign'
+import DotSpinner from '../../components/DotSpinner'
 
 const TextInput = styled.input`
   width: 370px;
@@ -75,7 +76,7 @@ const StyledA = styled.a`
   }
 `
 
-export default ({ address, result, error, onChange, onClick }) => {
+export default ({ address, result, error, onChange, loading, onClick }) => {
   const disable = !address || address.length === 0
   return (
     <CardBg
@@ -93,7 +94,7 @@ export default ({ address, result, error, onChange, onClick }) => {
           <SupplyChainImg width="288" height="383" />
         </Flex>
         <Flex flexDirection="column" flex={1}>
-          {result && result.link && (
+          {!loading && result && result.link && (
             <Flex
               textAlign="center"
               bg="rgba(66, 196, 127, 0.1)"
@@ -129,7 +130,7 @@ export default ({ address, result, error, onChange, onClick }) => {
               </Text>
             </Flex>
           )}
-          {error && (
+          {!loading && error && (
             <Flex
               textAlign="center"
               bg="#ffe1e1"
@@ -150,6 +151,14 @@ export default ({ address, result, error, onChange, onClick }) => {
               <Text color="#ec6363" fontSize="12px" textAlign="center">
                 {error}
               </Text>
+            </Flex>
+          )}
+          {loading && (
+            <Flex
+              style={{ width: '320px', height: '35px' }}
+              justifyContent="center"
+            >
+              <DotSpinner color="#4e3ca9" />
             </Flex>
           )}
           <Flex mb="20px">
