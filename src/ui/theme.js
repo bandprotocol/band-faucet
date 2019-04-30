@@ -12,7 +12,7 @@ export default {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
-    sans: 'Montserrat, sans-serif',
+    sans: 'Avenir, sans-serif',
   },
   shadows: {
     small: '0 0 4px rgba(0, 0, 0, .125)',
@@ -20,7 +20,7 @@ export default {
   },
   buttons: {
     primary: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Avenir, sans-serif',
       fontWeight: 400,
       fontSize: '0.85em',
       padding: '0.9em 3em',
@@ -34,7 +34,7 @@ export default {
       },
     },
     outline: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Avenir, sans-serif',
       fontWeight: 400,
       fontSize: '0.85em',
       padding: '0.9em 3em',
@@ -48,7 +48,7 @@ export default {
       },
     },
     disable: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Avenir, sans-serif',
       fontWeight: 400,
       fontSize: '0.85em',
       padding: '0.9em 3em',

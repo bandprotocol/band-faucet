@@ -15,10 +15,10 @@ export default class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <PageContainer>
-          <Router>
-            <div>
-              <Navbar />
+        <Router>
+          <React.Fragment>
+            <Navbar />
+            <PageContainer>
               <Switch>
                 <Route exact path="/" component={FaucetPage} />
                 <Route exact path="/faucet" component={FaucetPage} />
@@ -29,9 +29,9 @@ export default class App extends Component {
                 />
                 <Route path="/" component={NotFoundPage} />
               </Switch>
-            </div>
-          </Router>
-        </PageContainer>
+            </PageContainer>
+          </React.Fragment>
+        </Router>
       </ThemeProvider>
     )
   }

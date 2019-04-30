@@ -5,12 +5,14 @@ import axios from 'axios'
 export default class Faucet extends React.Component {
   state = {
     address: '',
-    result: [],
+    result: null,
+    error: null,
   }
 
   onChange(e) {
+    const newAddr = (e.target && e.target.value) || ''
     this.setState({
-      address: e.target.value,
+      address: newAddr,
     })
   }
 
@@ -20,18 +22,16 @@ export default class Faucet extends React.Component {
         `${process.env.REACT_APP_API_PATH}/band/request`,
         {
           to: this.state.address,
-          value: '1000000000000000000000',
+          value: '100000000000000000000',
         },
       )
       this.setState({
-        result: [
-          ...this.state.result,
-          {
-            message: 'Send BandToken to ' + this.state.address,
-            link: 'https://rinkeby.etherscan.io/tx/' + data.result,
-          },
-        ],
-        error: '',
+        result: {
+          message: 'Send BandToken to ' + this.state.address,
+          link: 'https://rinkeby.etherscan.io/tx/' + data.result,
+        },
+        address: '',
+        error: null,
       })
     } catch (e) {
       this.setState({ error: e.response.data.message.to })
