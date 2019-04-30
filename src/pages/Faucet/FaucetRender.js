@@ -75,8 +75,17 @@ const StyledA = styled.a`
   }
 `
 
-export default ({ address, result, error, onChange, loading, onClick }) => {
-  const disable = !address || address.length === 0
+export default ({
+  address,
+  email,
+  result,
+  error,
+  onChange,
+  loading,
+  onClick,
+}) => {
+  const disable =
+    !address || address.length === 0 || !email || email.length === 0
   return (
     <CardBg
       width="920px"
@@ -93,7 +102,7 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
           <SupplyChainImg width="288" height="383" />
         </Flex>
         <Flex flexDirection="column" flex={1}>
-          {!loading && result && result.link && (
+          {!loading && result && (
             <Flex
               textAlign="center"
               bg="rgba(66, 196, 127, 0.1)"
@@ -116,16 +125,7 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
                 textAlign="center"
                 lineHeight="35px"
               >
-                Your request was successful. View your transaction
-                <StyledA
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={result.link}
-                  style={{ textDecoration: 'underline' }}
-                >
-                  here
-                </StyledA>
-                .
+                Your request was successful. Please check your email.
               </Text>
             </Flex>
           )}
@@ -171,6 +171,20 @@ export default ({ address, result, error, onChange, loading, onClick }) => {
               name="address"
               value={address}
               placeholder="Rinkeby address"
+              onChange={onChange}
+            />
+          </Flex>
+          <Flex mb="20px">
+            <Text color="#4e3ca9" fontFamily="Avenir-Medium" fontWeight={500}>
+              Your email address:
+            </Text>
+          </Flex>
+          <Flex mb="30px">
+            <TextInput
+              type="text"
+              name="email"
+              value={email}
+              placeholder="test@example.com"
               onChange={onChange}
             />
           </Flex>

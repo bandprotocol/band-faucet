@@ -1,40 +1,45 @@
 import React from 'react'
 import FaucetRender from './FaucetRender'
 import axios from 'axios'
+import checkEmail from '../../helpers/checkEmail'
 
 export default class Faucet extends React.Component {
   state = {
     address: '',
+    email: '',
     result: null,
     error: null,
     loading: false,
   }
 
   onChange(e) {
-    const newAddr = (e.target && e.target.value) || ''
+    const { name, value } = e.target
     this.setState({
-      address: newAddr,
+      [name]: value,
     })
   }
 
   async onClick() {
+    if (!checkEmail(this.state.email)) {
+      this.setState({
+        error: 'Please input valid email.',
+      })
+      return null
+    }
     this.setState(
       {
         loading: true,
       },
       async () => {
+        const { email, address } = this.state
         try {
-          const { data } = await axios.post(
-            `${process.env.REACT_APP_API_PATH}/band/request`,
-            {
-              to: this.state.address,
-              value: '100000000000000000000',
-            },
-          )
+          await axios.post('https://testnet.bandprotocol.com/faucet/request', {
+            email,
+            address,
+          })
           this.setState({
             result: {
-              message: 'Send BandToken to ' + this.state.address,
-              link: 'https://rinkeby.etherscan.io/tx/' + data.result,
+              message: 'Success',
             },
             address: '',
             error: null,
@@ -44,7 +49,7 @@ export default class Faucet extends React.Component {
           this.setState({
             result: null,
             address: '',
-            error: e.response.data.message.to,
+            error: e.response.data.message,
             loading: false,
           })
         }
@@ -53,10 +58,11 @@ export default class Faucet extends React.Component {
   }
 
   render() {
-    const { address, result, error, loading } = this.state
+    const { address, email, result, error, loading } = this.state
     return (
       <FaucetRender
         address={address}
+        email={email}
         result={result}
         error={error}
         loading={loading}
