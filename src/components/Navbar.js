@@ -1,7 +1,7 @@
 import React from 'react'
-import { Flex } from 'rebass'
+import { Flex, Image } from 'rebass'
 import styled from 'styled-components'
-import CHTLogo from '../images/chtLogo'
+import BandLogoSrc from '../images/bandLogo.png'
 
 const StyledA = styled.a`
   font-weight: 700;
@@ -32,7 +32,7 @@ export default props => (
         rel="noopener noreferrer"
         href="https://beta.coinhatcher.com/tcr/listed"
       >
-        <CHTLogo width="133" height="35" />
+        <Image src={BandLogoSrc} height="30px" />
       </a>
     </Flex>
     <Flex
