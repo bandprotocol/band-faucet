@@ -43,9 +43,9 @@ export default props => (
       <StyledA
         target="_blank"
         rel="noopener noreferrer"
-        href="https://developer.bandprotocol.com/"
+        href="https://app.kovan.bandprotocol.com/"
       >
-        Documentation
+        Data Governance
       </StyledA>
       <StyledA
         target="_blank"
