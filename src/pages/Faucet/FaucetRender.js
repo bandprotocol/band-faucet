@@ -95,7 +95,7 @@ export default ({
       pb="100px"
     >
       <TextHeader mt="40px" mb="80px">
-        Band  Rinkeby Faucet
+        Band Kovan Faucet
       </TextHeader>
       <Flex flexDirection="row" width={1}>
         <Flex flex={1} justifyContent="center" alignItems="center">
@@ -170,7 +170,7 @@ export default ({
               type="text"
               name="address"
               value={address}
-              placeholder="Rinkeby address"
+              placeholder="Kovan address"
               onChange={onChange}
             />
           </Flex>
@@ -210,7 +210,9 @@ export default ({
               lineHeight={1.67}
               style={{ fontStyle: 'oblique' }}
             >
-              * By requesting testnet BAND token, you agree to forfeit your once-in-a-lifetime chance to convert testnet BAND and CHT to mainnet.
+              * By requesting testnet BAND token, you agree to forfeit your
+              once-in-a-lifetime chance to convert testnet BAND and CHT to
+              mainnet.
             </Text>
           </Flex>
         </Flex>

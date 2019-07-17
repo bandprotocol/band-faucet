@@ -33,10 +33,13 @@ export default class Faucet extends React.Component {
       async () => {
         const { email, address } = this.state
         try {
-          await axios.post('https://testnet.bandprotocol.com/faucet/request', {
-            email,
-            address,
-          })
+          await axios.post(
+            'https://testnet.bandprotocol.com/kovan/faucet/request',
+            {
+              email,
+              address,
+            },
+          )
           this.setState({
             result: {
               message: 'Success',
